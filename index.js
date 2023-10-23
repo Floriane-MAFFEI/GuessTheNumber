@@ -42,7 +42,21 @@ const game = () => {
     console.log(`✨ You succeeded in ${count} attempts.`);
   };
 
+  const restartGame = () => {
+    const choice = prompt("Do you want to play again? (Y/N):");
+
+    if (choice.toUpperCase() === "Y") {
+      game();
+    } else if (choice.toUpperCase() === "N") {
+      console.log("Thank you for playing! Goodbye.");
+    } else {
+      console.log("Invalid choice. Please enter Y or N.");
+      restartGame();
+    }
+  };
+
   playGuessingGame();
+  restartGame();
 };
 
 console.log(`
